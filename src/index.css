@@ -25,8 +25,10 @@
 
 *, *::before, *::after { box-sizing: border-box; }
 body { min-width: 320px; margin: 0; background: var(--bg); }
+#root { overflow-x: clip; }
 body::before { position: fixed; inset: 0; z-index: -1; pointer-events: none; content: ""; opacity: .13; background-image: radial-gradient(#8a8a96 .65px, transparent .65px); background-size: 5px 5px; mask-image: linear-gradient(to bottom, transparent, #000 24%, #000 78%, transparent); }
 button, input { font: inherit; }
+a, button { touch-action: manipulation; }
 a { color: inherit; text-decoration: none; }
 button { color: inherit; }
 ::selection { color: var(--bg); background: var(--lime); }
@@ -68,7 +70,7 @@ button { color: inherit; }
 .hero-section h1 > span { color: var(--lime); }
 .title-period { color: var(--ink); }
 .hero-role { margin: 28px 0 0; color: #d8dbd2; font-size: 13px; font-weight: 500; }
-.hero-role > span { padding-inline: 5px; color: var(--lime); }
+.hero-role > .hero-role-sep, .hero-role > .typed-caret { padding-inline: 5px; color: var(--lime); }
 .hero-description { max-width: 475px; margin: 17px 0 0; color: var(--muted); font-size: 16px; line-height: 1.72; }
 .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; margin-top: 31px; }
 .button { display: inline-flex; align-items: center; justify-content: center; gap: 11px; min-height: 48px; padding: 0 17px; font-size: 12px; font-weight: 600; transition: transform .2s ease, background .2s ease, border-color .2s ease; }
@@ -119,7 +121,7 @@ button { color: inherit; }
 .section-block { padding-block: 112px; border-top: 1px solid var(--line); scroll-margin-top: 76px; }
 .section-heading { display: flex; justify-content: space-between; align-items: end; gap: 38px; margin-bottom: 45px; }
 .section-kicker { margin: 0 0 16px; color: var(--lime); font-size: 9px; letter-spacing: .15em; }
-.section-heading h2, .contact-copy h2 { margin: 0; font-size: clamp(38px, 5.5vw, 64px); font-weight: 500; line-height: 1.04; letter-spacing: -.065em; }
+.section-heading h2, .contact-copy h2 { margin: 0; font-size: clamp(38px, 5.5vw, 64px); font-weight: 500; line-height: 1.04; letter-spacing: -.065em; text-wrap: balance; }
 .section-heading h2 span, .contact-copy h2 span { color: var(--lime); }
 .section-intro { max-width: 360px; margin: 0 0 3px; color: var(--muted); font-size: 14px; line-height: 1.75; }
 .project-toolbar { display: flex; align-items: center; justify-content: space-between; padding: 0 0 14px; border-bottom: 1px solid var(--line); }
