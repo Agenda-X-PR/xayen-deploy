@@ -288,7 +288,7 @@ function App() {
             {navItems.map((item) => (
               <a key={item.id} href={`#${item.id}`} className={active === item.id ? 'nav-active' : ''} onClick={() => setMobileMenuOpen(false)}>{item.label}</a>
             ))}
-            <button className="command-trigger" type="button" onClick={() => { setCommandOpen(true); setMobileMenuOpen(false) }} aria-label="Open section search (Control K)">
+            <button className="command-trigger" type="button" onClick={() => { setCommandOpen(true); setMobileMenuOpen(false) }} aria-label="Open section search" aria-keyshortcuts="Control+K Meta+K">
               <Command size={14} /><span>Jump to</span><kbd>⌘ K</kbd>
             </button>
           </div>
@@ -303,7 +303,7 @@ function App() {
           <div className="hero-copy">
             <p className="eyebrow"><span className="eyebrow-square" /> SECURITY-FIRST ENGINEERING <span className="eyebrow-line" /></p>
             <h1 id="hero-title">Security-minded<br /><span>by design<span className="title-period">.</span></span></h1>
-            <p className="hero-role">{contact.name}<span> / </span>{typedRole}<span className="typed-caret" aria-hidden="true">&nbsp;</span></p>
+            <p className="hero-role">{contact.name}<span className="hero-role-sep"> / </span><span className="sr-only">{roles.join(', ')}</span><span aria-hidden="true">{typedRole}</span><span className="typed-caret" aria-hidden="true">&nbsp;</span></p>
             <p className="hero-description">I build resilient web services and practical defensive tools — connecting secure software engineering with hands-on cybersecurity.</p>
             <div className="hero-actions">
               <a className="button button-primary" href={webhookDemoUrl} target="_blank" rel="noreferrer">View Live Webhook Service <ArrowUpRight size={16} aria-hidden="true" /></a>
@@ -397,7 +397,7 @@ function App() {
         <span className="footer-year">© {new Date().getFullYear()}</span>
       </footer>
 
-      <button className="floating-mail" type="button" onClick={() => { window.location.href = `mailto:${contact.email}` }} aria-label="Email Xayen"><Mail size={17} /></button>
+      <a className="floating-mail" href={`mailto:${contact.email}`} aria-label="Email Xayen"><Mail size={17} aria-hidden="true" /></a>
       {commandOpen && <CommandMenu onClose={() => setCommandOpen(false)} />}
     </>
   )

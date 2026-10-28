@@ -56,7 +56,7 @@ export const projects: Project[] = [
     name: 'sec-triage',
     eyebrow: 'DEFENSIVE TOOLING',
     description: 'An offline Python CLI for first-pass triage of web and SSH logs using the standard library.',
-    contribution: 'wrote the HMAC-SHA512 verification and 25-test suite; teammate built the CLI parser"',
+    contribution: 'Wrote the HMAC-SHA512 verification and 25-test suite; teammate built the CLI parser.',
     tech: ['Python 3.9+', 'Standard library', 'unittest', 'CLI'],
     category: 'Security',
     icon: ShieldCheck,
